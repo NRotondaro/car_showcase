@@ -6,18 +6,20 @@ import { MouseEventHandler } from 'react';
 interface CustomButtomProps {
   title: string;
   containerStyles?: string;
-  handleClick: MouseEventHandler<HTMLButtonElement>;
+  handleClick?: MouseEventHandler<HTMLButtonElement>;
+  btnType?: 'button' | 'submit';
 }
 
 const CustomButtom = ({
   title,
   containerStyles,
   handleClick,
+  btnType,
 }: CustomButtomProps) => {
   return (
     <button
       disabled={false}
-      type={'button'}
+      type={btnType || 'button'}
       className={`custom-btn ${containerStyles}`}
       onClick={handleClick}
     >
